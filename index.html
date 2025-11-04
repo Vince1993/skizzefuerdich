@@ -14,8 +14,8 @@
             <nav>
                 <ul class="inter_default_font">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Sketches</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#sketches">Sketches</a></li>
+                    <li><a href="#about">About</a></li>
                 </ul>
             </nav>
         </header>
@@ -27,7 +27,7 @@
                     “Get a sketch” is a website to share art. Download a picture, send it to make someone smile. <br><br>Donation voluntarily</p>
             </section>
 
-            <section class="index_sketch_section">
+            <section id="sketches" class="index_sketch_section">
                 <h2 class="inter_default_font">Sketches</h2>
                 <p class="inter_default_font">Have a look around, pick your favourite, and download the sketch.</pclass>
                 <div class="gallery">
@@ -35,8 +35,35 @@
                 </div>
             </section>
 
-            <!--Biuld Footer-->
+            <section id="about" class="index_about inter_default_font">
+                <h2>About</h2>
+                <p>
+                    I build this website to share some drawings. <br>
+                    If you are happy lookoing at them, that's good. If you want to say thanks or donate you can it at the bottom of the page.
+
+                    I'm born 1993 in Germany and started drawing while travelling through New Zealand.
+                </p>
+            </section>
+
+            <section id="donations" class="index_donations inter_default_font">
+                <h2>Donations</h2>
+                <p>
+                    Every donation is used to keep on drawing, and maintining this website.
+                    "Get a sketch" is based in Germany and it is not a charitable organizations.
+                    Therefore I can't issue tax-deductible donation receipts.
+                </p>
+            </section>
+
+            <footer class="inter_default_font">
+                <a>Impressum</a>
+                <a>Datenschutz</a>
+                <a>Rechtliches</a>
+                <a href="#">&#8689;</a>
+            </footer>
+
         </main>
+
+        
 
 
 
@@ -50,6 +77,8 @@ var myFeature = {
         $(".gallery").on("click", "img", function () {
             myFeature.fullScreenImage.call(this);
         });
+
+        
     },
     openNav: function() {
         $("header nav").slideToggle();
@@ -61,6 +90,7 @@ var myFeature = {
             });
         });
     },
+
     fullScreenImage: function () {
         if (document.fullscreenElement) {
             document.exitFullscreen();
@@ -75,7 +105,13 @@ var myFeature = {
             }
         }
        
-    } 
+    },
+
+    scroll: function(){
+        function scrollToTop() {
+            $("html, body").animate({ scrollTop: $('#title1').offset().top }, 1000);
+        }
+    }
 
 
 };
