@@ -30,6 +30,18 @@ header nav{display: none; flex: 1 0 100%; justify-self: flex-start; padding-left
          background-color: black;}
 .gallery img{width: 100%; height: auto; display: block; border-radius: 50px; transition: transform 0.3s ease, box-shadow 0.3s ease;} .gallery img:hover{transform: scale(1.05); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);}
 
+.full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+}
+
+
 .index_donations button{cursor: pointer;margin: 20px; background-color: black; color:aliceblue; border-radius: 10px; font-size: 1rem ;width: 300px; height: 80px; transition: background-color 1s ease;}
 .index_donations button:hover{background-color: #EFEFEF; color: black;}
 @media only screen and (min-width: 700px) {
