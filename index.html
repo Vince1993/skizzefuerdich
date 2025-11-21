@@ -1,54 +1,65 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skizze fuer dich</title>
-
     <link href="style.css" rel="stylesheet" />
 </head>
+
 <body>
-    <header style="display: flex; align-items: center; border-bottom: 1px solid black;">
-        <span id="respo" style="font-size: 70px; padding: 10px;">
-            &#10908;
+    <header>
+        <span id="respo">
+            &#10909;
         </span> 
-        <h1 style="text-align: center; margin: auto;"><a href="index.html">Skizze für dich &copy;</a></h1>
+        <h1><a href="index.html">Skizze für dich &copy;</a></h1>
     </header>
-    <nav style="background-color: rgb(0, 0, 0)">
+    <nav>
         <a>Home</a>
         <a href="#skizzen">Skizzen</a>
         <a href="#support">Support</a>
         <a href="#favoriten">Favoriten</a>
-        <a>Impressum u. Kontakt</a>
+        <a herf="">Impressum u. Kontakt</a>
     </nav><main>
-        <p style="font-size: 1.2rem; padding: 60px; text-align: right;">
-            Schau dich um, nimm dir einen Moment oder downloade ein Bild.
-            Weiter unten kannst du deinen Favoriten bestimmen und herausfinden was deine Mitmenschen denken.
-        </p>
-
-        <section class="may_be_a_carousel" style="display:flex; justify-content: space-around;">
-            <img src="img_small/sketch12.jpg" id="car1" />
-            <img src="img_small/sketch7.jpg" id="car2" />
-            <img src="img_small/sketch9.jpg" id="car3" />
-        </section>
-
-
-        <p style="font-size: 1.2rem; padding: 60px; text-align: left;">
-            "Skizze für dich" ist eine Website um Kunst zu teilen. Wenn dir die Bilder Freude bereiten, schreib mir gerne
-            eine Mail über das Kontaktformular oder spende eine kleine Summe.
-        </p>
-
-        <h2 id="skizzen" style="font-size: 2rem; margin-bottom: 20px; text-align: center;">Skizzen</h2>
-        <section class="img_grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; border: 20px solid rgb(10, 6, 41); background-color: rgb(10, 6, 41);">
-            <!--IMAGES ARE LOADED VIA JS-->
-        </section>
-
-        <section id="support" style="margin-top: 30px; display:flex; flex-direction: column; align-items: center;">
-            <h2  style="font-size: 2rem; margin-top: 10px; text-align: center;">Support</h2>
+       
+        <section id="hero">
+            <p>
+                Schau dich um, nimm dir einen Moment oder downloade ein Bild.
+                Weiter unten kannst du deinen Favoriten bestimmen und herausfinden was deine Mitmenschen denken.
+            </p>
             
-            <p style="font-size: 1.2rem; padding:30px; text-align: left;">
-                Jede noch so kleine finanzielle Unterstützung ist willkommen und wird dankend angenommen.<br>
-                Entweder wird die Unterstützung genutzt für den Aufbau einer App oder den Betrieb und die Entwicklung auf der Homepage auf der Du dich hier befindest.</p>
+            <section class="flexrow_spaceAroundHor_centerVer">
+                <img src="img_small/sketch12.jpg" id="car1" />
+                <img src="img_small/sketch7.jpg" id="car2" />
+                <img src="img_small/sketch9.jpg" id="car3" />
+            </section>
+             
+            <p>
+                "Skizze für dich" ist eine Website um Kunst zu teilen.
+                Wenn dir die Bilder Freude bereiten, schreib mir gerne
+                eine Mail über das Kontaktformular oder spende eine kleine Summe.</p>
+
+        </section>
+        
+
+        <section id="skizzen" >
+            <h2>Skizzen</h2>
+            <div class="img_grid">
+                <!--IMAGES ARE LOADED VIA JS-->
+
+            </div>
+        </section>
+
+        <section id="support" class="flexcol_centerVer">
+            <h2>Support</h2>
+            <p>
+                Jede kleine finanzielle Unterstützung ist willkommen und wird dankend angenommen.
+                <br>
+                Entweder wird die Unterstützung genutzt für den Aufbau einer App oder den Betrieb
+                und die Entwicklung dieser Homepage.
+            </p>
             
             <a href="https://www.paypal.com/donate/?hosted_button_id=DXYUE6F68LTHW">
                 <button id="donation_button">
@@ -57,18 +68,15 @@
             </a>
         </section>
 
-        <section id="favoriten" style="margin-top: 20px; display:flex; flex-direction: column; align-items: center;">
-            <h2 id="support" style="font-size: 2rem; margin: 20px; text-align: center;">Favoriten</h2>
-        
-            <p style="font-size: 1.2rem; margin: 20px; text-align: left;">
-                Welches ist dein Lieblingsbild? </p>
-        
+        <section id="favoriten" class="flexcol_centerVer">
+            <h2>Favoriten</h2>
+            <p>Welches ist dein Lieblingsbild?</p>
         </section>
     </main>
     
+<script src="jQuery/jq-dev.js"></script>
+<script src="javaScript.js"></script>
 
-    
-    <script src="jQuery/jq-dev.js"></script>
-    <script src="javaScript.js"></script>
 </body>
+
 </html>
