@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#respo").click(slideInAndOut);
 
-    $.ajax({
+    /*$.ajax({
         url: "countImages.php",
         dataType: "json",   // <-- tell jQuery to parse JSON
         success: function (response) {
@@ -11,8 +11,10 @@ $(document).ready(function () {
         error: function (xhr, status, error) {
             console.error("AJAX error:", status, error);
         }
-    });
+    });*/
 
+
+    loadImages(17);
 
     $(document).on("click", ".img_grid img", openCloseFullScreen);
 
