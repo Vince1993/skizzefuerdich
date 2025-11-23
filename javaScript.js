@@ -1,46 +1,40 @@
 $(document).ready(function () {
     $("#respo").click(slideInAndOut);
 
-    $.ajax({
-        url: "countImages.php",
-        dataType: "json",   // <-- tell jQuery to parse JSON
-        success: function (response) {
-            var numImages = response.count; // now works
-            loadImages(numImages);
-        },
-        error: function (xhr, status, error) {
-            console.error("AJAX error:", status, error);
-        }
-    });
+    rotateImages();
 
+    loadImages(17);
 
     $(document).on("click", ".img_grid img", openCloseFullScreen);
 
     $("a[href^='#']").on("click", scrollingSmoothToId);
-
-    $(function () {
-        const $track = $('.carousel .track');
-
-        function fadeShift() {
-            const $lastImg = $track.children().last();
-
-            // fade out the first image
-            $lastImg.fadeOut(400, function () {
-                // move it to the start
-                $track.prepend($lastImg);
-                // fade it back in at the new position
-                $lastImg.fadeIn(400);
-            });
-        }
-
-        // run every 3 seconds
-        setInterval(fadeShift, 3000);
-    });
       
 });
 
+
+
+//FUNCTION LIST
 function slideInAndOut() {
     $("nav a").slideToggle(1000);}
+
+function rotateImages() {
+    const $track = $('.carousel .track');
+
+    function fadeShift() {
+        const $lastImg = $track.children().last();
+
+        // fade out the first image
+        $lastImg.fadeOut(400, function () {
+            // move it to the start
+            $track.prepend($lastImg);
+            // fade it back in at the new position
+            $lastImg.fadeIn(400);
+        });
+    }
+
+    // run every 3 seconds
+    setInterval(fadeShift, 3000);
+}
 
 function loadImages(numImages) {
     for (let i = 0; i < numImages; i++) {
@@ -50,6 +44,17 @@ function loadImages(numImages) {
                 <div class="overlay-number">${i + 1}</div>
             </div>`);
     }
+
+    /* $.ajax({
+        url: "countImages.php",
+        dataType: "json",   // <-- tell jQuery to parse JSON
+        success: function (response) {
+            var numImages = response.count; // now works
+        },
+        error: function (xhr, status, error) {
+            console.error("AJAX error:", status, error);
+        }
+    }); */
 }
 
 function openCloseFullScreen() {
