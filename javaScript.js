@@ -1,7 +1,23 @@
 $(document).ready(function () {
     $("#respo").click(slideInAndOut);
 
+<<<<<<< HEAD
     rotateImages();
+=======
+    /*$.ajax({
+        url: "countImages.php",
+        dataType: "json",   // <-- tell jQuery to parse JSON
+        success: function (response) {
+            var numImages = response.count; // now works
+            loadImages(numImages);
+        },
+        error: function (xhr, status, error) {
+            console.error("AJAX error:", status, error);
+        }
+    });*/
+>>>>>>> 475d45c148faffb599526d45317e3ca7094302a8
+
+    loadImages(17);
 
     loadImages(17);
 
