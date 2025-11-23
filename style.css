@@ -26,7 +26,7 @@ nav a{display: none; color: rgb(0, 0, 0); padding:5px; font-size: 1.3rem; font-w
 
 
 .flexrow_spaceAroundHor_centerVer{display:flex; justify-content: space-around; align-items: center;}
-.flexcol_centerVer{display:flex; flex-direction: column; align-items: center;}
+.flexcol_centerVer{display:flex; flex-direction: column;}
 
 .carousel img{display:block; width: 20%; border-radius: 30px;}
 
@@ -63,8 +63,9 @@ nav a{display: none; color: rgb(0, 0, 0); padding:5px; font-size: 1.3rem; font-w
                 margin:auto;
                 pointer-events: none;}
 
+#support a {align-self: center;}               
 #support button{width: 330px; height: 80px;
-                cursor: pointer;
+                align-self: center;
                 font-size: 1.07rem; 
                 margin: 30px; 
                 color:rgb(255, 255, 255);
@@ -78,7 +79,7 @@ footer{height: 240px; display:flex; flex-direction: column; padding: 20px; backg
 
 @media only screen and (min-width: 1000px){
     html{font-size: 128%;}
-    p{padding: 40px 180px 40px 180px}
+    p{align-self: left;}
 
     header{padding: 30px;}
     header span{display: none;}
