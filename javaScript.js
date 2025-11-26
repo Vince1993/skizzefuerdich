@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     loadImages(17);
 
-    $(document).on("click", ".img_grid img", openCloseFullScreen);
+    $(document).on("click", "img", openCloseFullScreen);
 
     $("a[href^='#']").on("click", scrollingSmoothToId);
       
@@ -69,10 +69,35 @@ function loadImages(numImages) {
 }
 
 function openCloseFullScreen() {
-    if (!document.fullscreenElement) {
-        $(this)[0].requestFullscreen(); // ensure raw DOM element
+    const elem = $(this)[0]; // raw DOM element
+
+    // Check if any fullscreen element is active
+    const isFullscreen =
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement;
+
+    if (!isFullscreen) {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { // Safari
+            elem.webkitRequestFullscreen();
+        } else if (elem.mozRequestFullScreen) { // Older Firefox
+            elem.mozRequestFullScreen();
+        } else if (elem.msRequestFullscreen) { // IE/Edge legacy
+            elem.msRequestFullscreen();
+        }
     } else {
-        document.exitFullscreen();
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { // Safari
+            document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Older Firefox
+            document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) { // IE/Edge legacy
+            document.msExitFullscreen();
+        }
     }
 }
 
