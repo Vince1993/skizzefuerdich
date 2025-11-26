@@ -79,7 +79,7 @@ nav a{display: none; color: rgb(0, 0, 0); padding:5px; font-size: 1.3rem; font-w
 footer{height: 240px; display:flex; flex-direction: column; padding: 20px; background-color: rgb(255, 255, 255);} footer a, footer p{font-weight: 400; color: rgb(0, 0, 0); padding: 20px; font-size: 1rem;}
 
 @media only screen and (min-width: 1000px){
-    html{font-size: 128%;}
+    html{font-size: 130%;}
     p{align-self: left;}
 
     header{padding: 30px;}
