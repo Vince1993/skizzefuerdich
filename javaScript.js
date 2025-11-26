@@ -26,7 +26,7 @@ $(document).ready(function () {
 
 //FUNCTION LIST
 function slideInAndOut() {
-    $("nav a").slideToggle(1000);}
+    $("nav a").slideToggle(500);}
 
 function rotateImages() {
     const $track = $('.carousel .track');
